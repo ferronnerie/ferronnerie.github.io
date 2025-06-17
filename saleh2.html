@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ferronnerie Générale</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+  scroll-behavior: smooth;
+}
+
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #222;
+      color: #f1f1f1;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, rgba(34,34,34,0.9), rgba(34,34,34,0.8)), url('py1.jpeg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #464646af;
+      margin-top: 20px;
+    }
+
+    header img {
+      width: 60px;
+      height: auto;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      font-size: 2rem;
+      color: #f39d1278;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery-item {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .contact-links {
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .contact-card {
+      width: 100%;
+      max-width: 400px;
+      background: #2980b9;
+      color: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .contact-card:hover {
+      background: #f39c12;
+      color: #222;
+    }
+    .logo-large {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 40px auto 20px auto;
+  object-fit: contain;
+}
+
+
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+      }
+
+      header h1 {
+        margin-left: 20px;
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo" class="logo-large">
+    <a href="#gallery" class="scroll-down">&#8595;</a>
+  </header>
+
+  <section class="gallery" id="gallery">
+    <div class="gallery-item"><img src="py1.jpeg" alt="Image 1"></div>
+    <div class="gallery-item"><img src="py2.jpeg" alt="Image 2"></div>
+    <div class="gallery-item"><img src="py3.jpeg" alt="Image 3"></div>
+    <div class="gallery-item"><img src="py4.jpeg" alt="Image 4"></div>
+    <div class="gallery-item"><img src="py5.jpeg" alt="Image 5"></div>
+    <div class="gallery-item"><img src="py6.jpeg" alt="Image 6"></div>
+    <div class="gallery-item"><img src="py7.jpeg" alt="Image 7"></div>
+  </section>
+
+  <section class="contact-links">
+    <a href="mailto:ferronnerie_generale@outlook.com" class="contact-card">ferronnerie_generale@outlook.com</a>
+    <a href="tel:+212689331811" class="contact-card">Phone: +212 6 10 27 21 26</a>
+    <a href="https://www.instagram.com/ferronnerie__generale/#" target="_blank" class="contact-card">Instagram: @ferronnerie__generale</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Ferronnerie Générale – Made with iron and heart in Morocco.
+  </footer>
+
+</body>
+</html>

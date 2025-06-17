@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ferronnerie generale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0a0a;
+      color: #f1f1f1;
+      line-height: 1.8;
+    }
+
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0,0,0,0.85);
+      padding: 20px 60px;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+      color: #fff;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ff9900;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(to right, rgba(10,10,10,0.8), rgba(10,10,10,0.8)), url('py1.jpeg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      color: #ccc;
+    }
+
+    section {
+      padding: 100px 60px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto 80px auto;
+    }
+
+    .intro h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ff9900;
+    }
+
+    .intro p {
+      color: #ccc;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 60px;
+      justify-items: center;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.05);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 60px rgba(255,255,255,0.15);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: #fff;
+      padding: 20px;
+      font-size: 1rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-item:hover .image-caption {
+      opacity: 1;
+    }
+
+    .quote-section {
+      background: #111;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .quote-section blockquote {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #ff9900;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 2;
+    }
+
+    .quote-section p {
+      color: #aaa;
+      margin-top: 20px;
+    }
+
+    .contact {
+      background: #0f0f0f;
+      padding: 80px 40px;
+    }
+
+    .contact h3 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #ff9900;
+    }
+
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto;
+      display: grid;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 15px;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 10px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      padding: 15px;
+      background: #ff9900;
+      border: none;
+      color: #000;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #e68a00;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #000;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="logo.png" alt="Logo" style="height: 120px;">
+     
+    </div>
+    <div>
+      <a href="#gallery">Gallery</a>
+      <a href="#quote">Inspiration</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header>
+    <h2>Feel the Art. Live the Vision.</h2>
+    <p>A journey through handcrafted iron beauty — pure, bold, and timeless.</p>
+  </header>
+
+  <section class="intro">
+    <h3>About This Collection</h3>
+    <p>This gallery represents years of precision, passion, and power. Each image you see is not just a photograph, but a moment in my journey as a craftsman. From the sparks of the welding flame to the final installation in some of Morocco's finest villas, every detail matters. Welcome to a space where metal meets soul.</p>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="gallery-item">
+      <img src="py1.jpeg" alt="Work 1" />
+      <div class="image-caption">Entry Gate – Bold and Elegant</div>
+    </div>
+    <div class="gallery-item">
+      <img src="py2.jpeg" alt="Work 2" />
+      <div class="image-caption">Staircase Railing – Flowing Steel</div>
+    </div>
+    <div class="gallery-item">
+      <img src="py3.jpeg" alt="Work 3" />
+      <div class="image-caption">Villa Fence – Security with Style</div>
+    </div>
+    <div class="gallery-item">
+      <img src="py4.jpeg" alt="Work 4" />
+      <div class="image-caption">Ornamental Grill – Art in Detail</div>
+    </div>
+    <div class="gallery-item">
+      <img src="py5.jpeg" alt="Work 5" />
+      <div class="image-caption">Balcony Design – Airy & Strong</div>
+    </div>
+    <div class="gallery-item">
+      <img src="py6.jpeg" alt="Work 6" />
+      <div class="image-caption">Custom Gate – Prestige Entry</div>
+    </div>
+    <div class="gallery-item">
+      <img src="py7.jpeg" alt="Work 7" />
+      <div class="image-caption">Window Bars – Safety Reimagined</div>
+    </div>
+  </section>
+
+  <section class="quote-section" id="quote">
+    <blockquote>"Metal bends, melts, and rusts — but when shaped with love, it lives forever."</blockquote>
+    <p>— Ayoub Shouifi, Artisan & Visionary</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h3>Get in Touch</h3>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="6" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Ayoub Shouifi • Handcrafted in Morocco • Instagram: @ayoub.metal.art
+  </footer>
+
+</body>
+</html>
+<script>
+  document.querySelector('.contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Thank you for your message! I will get back to you soon.');
+    this.reset();
+  });
+  </script>
